@@ -21,7 +21,7 @@
   <PropertyGroup Label="Globals">
     <ProjectGuid>{D8E63C8F-EE8E-42A6-AA26-21A3CE2B28D8}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.10586.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -68,6 +68,15 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>true</LinkIncremental>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>$(SolutionDir)bin\$(Platform)\</OutDir>
+    <TargetName>$(ProjectName)d</TargetName>
+    <IntDir>$(SolutionDir)_Temp\$(Platform)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>$(SolutionDir)bin\$(Platform)\</OutDir>
+    <IntDir>$(SolutionDir)_Temp\$(Platform)\$(Configuration)\</IntDir>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;LEVELDB_PLATFORM_WINDOWS;OS_WIN;%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -103,6 +112,7 @@
     <ClCompile>
       <AdditionalIncludeDirectories>D:\project\common\include;D:\project\leveldb-windows;D:\project\leveldb-windows\include;D:\project\common\include\pthread;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;LEVELDB_PLATFORM_WINDOWS;OS_WIN;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
     </ClCompile>
     <Lib>
       <AdditionalLibraryDirectories>D:\project\common\libs\boost\vc14\x64\staticlib;D:\project\common\libs\pthread\vc14\x64\staticlib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
@@ -113,6 +123,7 @@
     <ClCompile>
       <AdditionalIncludeDirectories>D:\project\common\include;D:\project\leveldb-windows;D:\project\leveldb-windows\include;D:\project\common\include\pthread;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;LEVELDB_PLATFORM_WINDOWS;OS_WIN;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
     </ClCompile>
     <Lib>
       <AdditionalLibraryDirectories>D:\project\common\libs\boost\vc14\x64\staticlib;D:\project\common\libs\pthread\vc14\x64\staticlib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
